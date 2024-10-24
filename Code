@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FunWithBigNumbers
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        
+            long botCount;
+
+            do
+            {
+                Console.Write("Enter the number of bots (0 to quit): ");
+                botCount = Convert.ToInt64(Console.ReadLine());
+    
+                if (botCount == 0)
+                    break;
+    
+                if (botCount < 1000)
+                {
+                    Console.WriteLine(botCount + " Bots");
+                }
+                else if (botCount < 1000000)
+                {
+                    double botsInT = botCount / 1000.0;
+                    Console.WriteLine(botsInT.ToString("F2") + "K Bots");
+                }
+                else if (botCount < 1000000000)
+                {
+                    double botsInM = botCount / 1000000.0;
+                    Console.WriteLine(botsInM.ToString("F2") + "M Bots");
+                }
+                else if (botCount < 1000000000000)
+                {
+                    double botsInB = botCount / 1000000000.0;
+                    Console.WriteLine(botsInB.ToString("F2") + "G Bots");
+                }
+                else
+                {
+                    double botsInT = botCount / 1000000000000.0;
+                    Console.WriteLine(botsInT.ToString("F2") + "T Bots");
+                }
+            }
+            
+             while (botCount != 0);
+          
+        }
+    }
+}
